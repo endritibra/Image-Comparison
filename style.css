@@ -1,0 +1,107 @@
+body{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+    margin:0;
+    padding:0;
+  }
+  #image-comparison-slider{
+    /*same as widht plus max widht this width:min(80vw,768px)*/
+    width:80vw;
+    overflow:hidden;
+    max-width: 768px;
+    border-radius:1rem;
+    box-shadow:-3px 2px 5px 3px gray;
+    position:relative;
+  }
+  #image-comparison-slider img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:80vh;
+    object-fit: cover;
+    pointer-events:none;
+    user-select: none;
+    width:min(80vw,768px);
+  }
+  #image-comparison-slider .img-wrapper{
+    position: absolute;
+    top:0;
+    right:0;
+    left:50%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
+  #image-comparison-slider .img-wrapper img{
+    position: absolute;
+    top:0;
+    right:0;
+    height: 100%;
+  }
+  #image-comparison-slider .label{
+    position: absolute;
+    top:1rem;
+    z-index: 3;
+    color:#fff;
+    background-color: rgba(0,0,0,0.33);
+    border-radius:0.2rem;
+    padding: 0.5rem 0.7rem;
+    text-align: center;
+    letter-spacing: 1px;
+    user-select: none;
+    opacity:0;
+    transition: all 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+  }
+  #image-comparison-slider:hover .label{
+    opacity: 1;
+    background-color: black;
+  }
+  .label.label-before{
+    left:1rem;
+  }
+  .label.label-after{
+    right: 1rem;
+  }
+
+
+  #image-comparison-slider .handle{
+    position: absolute;
+    top:0;
+    left: calc(50% - 25px);
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    user-select: none;
+
+
+
+  }
+  #image-comparison-slider .handle-circle{
+    width: 40px;
+    height: 40px;
+    color:#fff;
+    border-radius: 50%;
+    border:2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: transparent;
+  }
+#image-comparison-slider .handle-line{
+    width: 2px;
+    flex-grow:1;
+    background-color: white;
+}
+
+
+  
